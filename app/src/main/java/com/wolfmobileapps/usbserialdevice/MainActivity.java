@@ -173,7 +173,8 @@ public class MainActivity extends AppCompatActivity implements SerialInputOutput
                 Toast.makeText(this, "Empty text!", Toast.LENGTH_SHORT).show();
                 return;
             }
-            //byte[] b = writeData.getBytes(Charset.forName("UTF-8"));
+            writeData = writeData + "\n"; //add end line
+            //byte[] b = writeData.getBytes(StandardCharsets.UTF_8);
             byte[] b = writeData.getBytes();
 
             // write string to usb
@@ -191,8 +192,12 @@ public class MainActivity extends AppCompatActivity implements SerialInputOutput
             @Override
             public void run() {
 
-                // add data to text
-                textViewDataFromUSB.append(new String(data));
+                //Convert byte[] to String
+                //String stringData = Base64.getEncoder().encodeToString(data); // min API 26, now is 21
+                String stringData = new String(data);
+
+                // add data to text View
+                textViewDataFromUSB.append(stringData);
             }
         });
     }
