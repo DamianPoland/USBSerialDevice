@@ -2,19 +2,37 @@ apply plugin: 'com.android.application'
 
 android {
 
+    signingConfigs {
+        release {
+            storeFile file('D:\\J & S pomoce\\Klucze i inne\\Android\\keystore_klucz_do_aplikacji.jks')
+            storePassword 'Ninja1'
+            keyAlias = 'key1'
+            keyPassword 'Ninja1555'
+        }
+        debug {
+            storeFile file('D:\\J & S pomoce\\Klucze i inne\\Android\\keystore_klucz_do_aplikacji.jks')
+            storePassword 'Ninja1'
+            keyAlias = 'key1'
+            keyPassword 'Ninja1555'
+        }
+    }
     compileSdkVersion 29
     defaultConfig {
         applicationId "com.wolfmobileapps.usbserialdevice"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 2
-        versionName "0.0.2"
+        versionCode 100
+        versionName "1.0.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.debug
         }
     }
 }

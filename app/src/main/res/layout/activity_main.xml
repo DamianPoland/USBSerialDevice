@@ -26,6 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Connection:"
+                android:textColor="@color/Blue"
                 android:textSize="16sp" />
 
             <TextView
@@ -39,8 +40,9 @@
 
         <Button
             android:id="@+id/buttonConnect"
-            android:layout_width="150dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/button_custom"
             android:text="Connect" />
     </LinearLayout>
 
@@ -62,8 +64,9 @@
 
         <Button
             android:id="@+id/buttonSendData"
-            android:layout_width="150dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/button_custom"
             android:text="Send Data" />
 
     </LinearLayout>
@@ -91,8 +94,9 @@
 
         <Button
             android:id="@+id/buttonClear"
-            android:layout_width="150dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/button_custom"
             android:text="Clear" />
 
     </LinearLayout>
